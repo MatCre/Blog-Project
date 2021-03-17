@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="headerSet">
+            <header>
+                <h1><img width="600px" height="600px" src="blog-Header.png" alt="blog title"></h1>
+            </header>
+        </div>
+        <div class="sideMenu">
+            <h3 class="menuSelect">Time Widget?</h3>
+            <h3 class="menuSelect">Random Fact Widget?</h3>
+            <h3 class="menuSelect">Random Image Widget?</h3>
+            <button class="addImage">Show Image</button>
+        </div>
+        <div rol="tablist" class="navbar" aria-label="Programming Languages">
+            <div class="tabControl">
+                <button role="tab" aria-selected="true" id="html">
+                    HTML
+                </button>
+            </div>
+            <div class="tabControl">
+                <button role="tab" aria-selected="false" id="css">
+                    CSS
+                </button>
+            </div>
+            <div class="tabControl">
+                <button role="tab" aria-selected="false" id="js">
+                    JavaScript
+                </button>
+            </div>
+        </div>
+        <div class="blogMain tabs">
+            <div role="tabpanel" aria-labelledby="html" class="blogEntryWrapperHtml blogBlock">
+                <div class="blogEntry">
+                    <h4>Div wrappers</h4>
+                    <p>The div element defines a section in a HTML document. It is commonly used
+                        as a container for HTML elements
+                    </p>
+                    <ul>Uses & Tips
+                        <li>a wrapper for the body of the html</li>
+                        <li>to create sections of content that can be controlled layout wise using CSS gridbox.</li>
+                        <li>By default, browsers always place a line break before and after the div element.</li>
+                    </ul>
+
+                </div>
+                <div class="blogEntry">
+                    <h4>roles</h4>
+                    <p>info about roles
+                    </p>
+                </div>
+                <div class="blogEntry">
+                    <h4>aria labelling</h4>
+                    <p>Info about aria labelling</p>
+                </div>
+                <div class="blogEntry">
+                    <h4>classes</h4>
+                    <p>info about classes
+                    </p>
+                </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="css" class="blogEntryWrapperCss blogBlock" hidden>
+                <div class="blogEntry">
+                    <h4>Box-Sizing</h4>
+                    <p>The box-sizing property determines how the width and the hieght of an element are calculated
+                        .By defualt any border or padding is added to the exhisting widht/ height of the element.
+                        If box-sizing is set to border-box on an element those properties are included in the total
+                        value</p>
+                </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="js" class="blogEntryWrapperJs blogBlock" hidden>
+                <div class="blogEntry">
+                    <h4>My First JS Post</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti cupiditate aperiam suscipit
+                        mollitia molestiae omnis rem pariatur nobis ex iste distinctio, commodi velit maxime quod
+                        architecto
+                        illo a quaerat quisquam.</p>
+                </div>
+            </div>
+        </div>
+        <div class="footerSet">
+            <footer>
+                <p>Add clickable icons</p>
+            </footer>
+        </div>
+    </div>
+    <script src="tabs.js"></script>
+    <script src="imageShow.js"></script>
+</body>
+
+</html>
