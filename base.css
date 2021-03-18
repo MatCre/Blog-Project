@@ -26,6 +26,7 @@ html {
     display: grid;
     grid-template-columns: 200px auto;
     grid-template-areas: 
+    'linkBar linkBar'
     'header header'
     'menu nav '
     'menu main'
@@ -34,9 +35,18 @@ html {
     margin: -10px;
     box-sizing: border-box;
 }
+.linkBar {
+    grid-area: linkBar;
+    display: flex;
+    justify-content: flex-end;
+}
 .headerSet {
     grid-area: header;
     background-color:var(--lightBlue);
+    display: flex;
+    justify-content: center;
+    font-size: 200%;
+    color: white;
 }
 .navbar {
     grid-area: nav;
