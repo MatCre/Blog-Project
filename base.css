@@ -24,14 +24,13 @@ html {
   .wrapper {
     /* Create the grid using the grid area templates */
     display: grid;
-    grid-template-columns: 200px auto;
+    grid-template-columns: 400px auto;
     grid-template-areas: 
     'linkBar linkBar'
     'header header'
-    'menu nav '
     'menu main'
     'footer footer';
-    grid-gap: 0.5px;
+    grid-gap: -0.5px;
     margin: -10px;
     box-sizing: border-box;
 }
@@ -39,21 +38,24 @@ html {
     grid-area: linkBar;
     display: flex;
     justify-content: flex-end;
+    margin-top: 20px;
+    margin-right: 100px;
+}
+.linkBar>span {
+    margin: 10px;
 }
 .headerSet {
     grid-area: header;
-    background-color:var(--lightBlue);
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(0,120,215,1) 100%, rgba(0,212,255,1) 100%);
     display: flex;
     justify-content: center;
     font-size: 200%;
     color: white;
 }
-.navbar {
-    grid-area: nav;
-    display: flex;
-    justify-content:space-around;
-    padding: 2rem;
-    background-color: var(--lightBlue);
+h1 {
+    font-size: 8vw;
+    text-shadow: 4px 4px 2px #f7f1f14d ;
 }
 .tabControl button {
     width: 20rem;
@@ -65,19 +67,25 @@ html {
     grid-area: menu;
     display:flex;
     flex-direction: column;
-    background-color: var(--gray);
+    background: rgb(44,44,44);
+    background: linear-gradient(180deg, rgba(44,44,44,1) 3%, rgba(108,108,108,1) 46%, rgba(255,255,255,1) 100%);
     padding: 4rem;
     font-size: 1.5em;
     color: white;
     border-right: 10px solid black;
+    border-top: 10px solid black;
 }
-
+.tabControl {
+    margin: 25px 15px 50px 20px;
+}
 .blogMian {
     grid-area: main;
 }
 .blogBlock {
     min-height: 150vh;
     padding: 60px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(0,120,215,1) 100%, rgba(0,212,255,1) 100%);
 }
 .blogEntry {
     border-radius: 2em;
@@ -88,6 +96,55 @@ html {
     background-color: var(--gray);
     color: white;
     box-shadow: 10px 10px var(--gray);
+}
+
+.etch-a-sketch {
+    display: flex;
+    justify-content: center;
+}
+
+.etch-a-sketch canvas {
+    border: 30px solid #e80000;
+    border-radius: 10px;
+    /* Set the width and height to half the actual size so it doesn't look pixelated */
+    width: 800px;
+    height: 500px;
+    background: white;
+}
+
+.etch-a-sketch canvas.shake {
+    animation: shake 0.5s linear 1;
+}
+
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+
+.blogEntryHeader{
+ display: flex;
+ justify-content: center;
 }
 
 .footerSet {
@@ -104,6 +161,6 @@ button {
     cursor:pointer;
     border-bottom: 2px solid black;
     border-top: 2px solid black;
-    color: white
+    color: white;
   }
 

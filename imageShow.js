@@ -8,8 +8,8 @@ function addImage() {
     newImg.alt = 'Cool Pic'
     const sideMenuInsert = document.querySelector('.sideMenu');
     sideMenuInsert.appendChild(newImg);
-    
+    imageButton.setAttribute('hidden',true);
 }
 
-imageButton.addEventListener('click',addImage ,{once: true});
+imageButton.addEventListener('click',addImage,{once: true});
 
