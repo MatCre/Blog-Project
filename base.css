@@ -76,6 +76,7 @@ h1 {
     border-top: 10px solid black;
 }
 .tabControl {
+    display: flex;
     margin: 25px 15px 50px 20px;
 }
 .blogMian {
@@ -162,5 +163,10 @@ button {
     border-bottom: 2px solid black;
     border-top: 2px solid black;
     color: white;
+    padding: 2rem;
   }
 
+  p {
+      display: flex;
+      justify-content: center;
+  }
