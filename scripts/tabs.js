@@ -3,7 +3,7 @@ const navBarButtons = document.querySelector('.navbar')
 const tabButtons = navBarButtons.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 
-function handleTabClick(event) {
+export function handleTabClick(event) {
   // hide all tab panels
   tabPanels.forEach((panel) => {
     panel.hidden = true;
