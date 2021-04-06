@@ -1,0 +1,10 @@
+I am going to dump my thoughts and what to work on/ change / implement here for now
+will eventually add this as functionality to the main page
+
+..Today I complted Wes Bos's Flexbox tutorial and now have a better understand of how flexbox works
+.Flex containers and then flex items are more clear to me now
+.The main axis and the cross axis is a big part of what i wasn't getting
+.I am still unsure however on when to sue flexbox and when to use grid so next up I want to complete Wes's grid tutorial
+.I have began to moduleify and structure my blog in a more clear and standardized way
+.Importing and exporting with node.js I was able to succefully transplant the etch-a-sketch javascirpt
+.Next up is the gallery, it needs some css added aswell

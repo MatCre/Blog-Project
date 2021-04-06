@@ -1,0 +1,51 @@
+$myFont: monospace, sans-serif;
+$myRed: red;
+$myBlue: blue;
+$myGreen: green;
+$myFontSize: 25px;
+$myWidth: 680px;
+
+body {
+    font-family: $myFont;
+    background-color: $myRed;
+}
+
+@mixin round($size, $radius: 0) {
+    width: $size;
+    height: $size;
+
+    @if $radius != 0 {
+        border-radius: $radius;
+    }
+}
+
+.main {
+    ul {
+    width: $myWidth;
+    }
+
+    li {
+        color: white;
+    }
+}
+
+img {
+    @include round(400px, $radius: 50%);
+}
+
+.btn-basic {
+    border: none;
+    padding: 15px 30px;
+    font-size: $myFontSize;
+    border-radius: 25px;
+}
+
+.blog-btn {
+    @extend .btn-basic;
+    background-color: $myBlue;
+}
+
+.cntc-btn {
+    @extend .btn-basic;
+    background-color: $myGreen;
+}
