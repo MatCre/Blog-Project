@@ -1,34 +1,28 @@
-body {
-  font-family: monospace, sans-serif;
-  background-color: red;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.main ul {
-  width: 680px;
+nav {
+  background-color: #FFDDC0;
+  flex: 1;
 }
-.main li {
-  color: white;
-}
-
-img {
-  width: 400px;
-  height: 400px;
-  border-radius: 50%;
+nav span {
+  border: 2px solid goldenrod;
 }
 
-.btn-basic, .cntc-btn, .blog-btn {
-  border: none;
-  padding: 15px 30px;
-  font-size: 25px;
-  border-radius: 25px;
+header {
+  flex: 1;
 }
 
-.blog-btn {
-  background-color: blue;
+main {
+  background-color: #AF5810;
+  flex: 1;
 }
 
-.cntc-btn {
-  background-color: green;
+footer {
+  flex: 1;
 }
 
 /*# sourceMappingURL=output.css.map */

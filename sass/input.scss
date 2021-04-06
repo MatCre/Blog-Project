@@ -1,51 +1,33 @@
 $myFont: monospace, sans-serif;
-$myRed: red;
-$myBlue: blue;
-$myGreen: green;
+$primaryColor1: #AF5810;
+$secondaryColor1: #FFDDC0;
 $myFontSize: 25px;
 $myWidth: 680px;
 
-body {
-    font-family: $myFont;
-    background-color: $myRed;
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-@mixin round($size, $radius: 0) {
-    width: $size;
-    height: $size;
+nav {
+    background-color: $secondaryColor1;
+    flex: 1;
 
-    @if $radius != 0 {
-        border-radius: $radius;
+    span {
+        border: 2px solid goldenrod;
     }
 }
 
-.main {
-    ul {
-    width: $myWidth;
-    }
-
-    li {
-        color: white;
-    }
+header {
+    flex: 1;
 }
 
-img {
-    @include round(400px, $radius: 50%);
+main {
+    background-color: $primaryColor1;
+    flex: 1;
 }
 
-.btn-basic {
-    border: none;
-    padding: 15px 30px;
-    font-size: $myFontSize;
-    border-radius: 25px;
-}
-
-.blog-btn {
-    @extend .btn-basic;
-    background-color: $myBlue;
-}
-
-.cntc-btn {
-    @extend .btn-basic;
-    background-color: $myGreen;
+footer {
+    flex: 1;
 }

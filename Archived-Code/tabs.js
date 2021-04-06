@@ -1,6 +1,6 @@
 const tabs = document.querySelector('.tabs');
 const navBarButtons = document.querySelector('.navbar')
-const tabButtons = navBarButtons.querySelectorAll('[role="tab"]');
+export const tabButtons = navBarButtons.querySelectorAll('[role="tab"]');
 const tabPanels = Array.from(tabs.querySelectorAll('[role="tabpanel"]'));
 
 export function handleTabClick(event) {
@@ -32,6 +32,4 @@ export function handleTabClick(event) {
   tabPanel.hidden = false;
 }
 
-tabButtons.forEach((button) =>
-  button.addEventListener('click', handleTabClick)
-);
+

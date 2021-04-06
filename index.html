@@ -3,164 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Page</title>
-    <link rel="stylesheet" href="./css/base.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/output.css">
 </head>
 
 <body>
     <div class="wrapper">
-        <div class="headerSet">
-            <header>
-                <div class="linkBar">
-                    <span>Links:</span>
-                    <a href="https://github.com/MatCre">
-                        <img src="./rsrc/github-logo.png" height="40" width="40"></a>
-                </div>
-                <h1>myStudioCode</h1>
-            </header>
-        </div>
-        <div class="sideMenu">
-            <div rol="tablist" class="navbar" aria-label="Programming Languages">
-                <div class="tabControl">
-                    <button role="tab" aria-selected="true" id="html">
-                        HTML
-                    </button>
-                </div>
-                <div class="tabControl">
-                    <button role="tab" aria-selected="false" id="css">
-                        CSS
-                    </button>
-                </div>
-                <div class="tabControl">
-                    <button role="tab" aria-selected="false" id="js">
-                        JavaScript
-                    </button>
-                </div>
-            </div>
-            <div class="center"><button class="addImage ">Pic Of The Day</button></div>
-        </div>
-        <div class="blogMain tabs">
-            <div role="tabpanel" aria-labelledby="html" class="blogEntryWrapperHtml blogBlock">
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Responsive Web Design - View Ports</h4>
-                    </div>
-                    <p>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-                    </p>
-                    <p>The above meta element is added to the head of all html documents, the device-width sets the
-                        width of the Page
-                        to follow the screen-width of the device used to view the page. The Initial-scale sets the
-                        initial zoom when the page
-                        is forst loaded.
-                    </p>
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Roles Atrribute</h4>
-                    </div>
-                    <p>The role attribute describes the role of an element in programs that can make use of it, such as
-                        screen readers or magnifiers.</p>
-                    <p>&lt;a href=&quot;#&quot; role=&quot;button&quot;&gt;Button Link&lt;/a&gt;</p>
-                    <p>Screen Readers will read this element as “button” instead of “link”.</p>
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>aria labelling</h4>
-                    </div>
-                    <p>'aria-label' is used to define a string that labels the current element, its best used in cases
-                        where the text labe is not
-                        visible on the screen. It is useful for assistive technologies to understand what elements of
-                        the screen are for.
-                        A button to close a dialogue box for example might not have the text close written on. using an
-                        aria-label screen readers will be
-                        able to determine that the button is used to 'close'.
-                    </p>
-                </div>
-            </div>
-            <div role="tabpanel" aria-labelledby="css" class="blogEntryWrapperCss blogBlock" hidden>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Box-Sizing</h4>
-                    </div>
-                    <p>The box-sizing property determines how the width and the hieght of an element are calculated
-                        .By defualt any border or padding is added to the exhisting widht/ height of the element.
-                        If box-sizing is set to border-box on an element those properties are included in the total
-                        value</p>
-                </div>
-                <div class="blogEntry">
-                    <div class="grid-container">
-
+        <nav>
+            <span>Websites</span>
+            <span>Code Examples</span>
+            <span>Archive</span>
+        </nav>
+        <header>
+            <h1 class="headerName">Mathew's Blog</h1>
+        </header>
+        <main>
+            <div class="container">
+                <div class="posts">
+                    <div class="post">
+                        <p>This is my test post</p>
                     </div>
                 </div>
             </div>
-            <div role="tabpanel" aria-labelledby="js" class="blogEntryWrapperJs blogBlock" hidden>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>String Quotation Marks</h4>
-                    </div>
-                    <p>Single quotes '' and Double Quotes "" are the same.</p>
-                    <p>Backticks `` automaticaly allow multi-line code and can be used to code html and css in JS</p>
-                    <p>Add Example</p>
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Numbers in JavaScript</h4>
-                    </div>
-                    <p>Only one type of number in JavaScript<em>no float/int</em></p>
-                    <p>When doing math aviod strings</p>
-                    <p>When working with money use pennies/cents
-                        Aviod (1.99) because of <a href="https://0.30000000000000004.com/">floating point math.</a>
-                    </p>
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Sort Number Function</h4>
-                    </div>
-                    <ul class="listOfNumbers">
-                        <li>2323</li>
-                        <li>4564</li>
-                        <li>2</li>
-                        <li>23</li>
-                        <li>64</li>
-                        <li>23</li>
-                        <li>756</li>
-                        <li>123</li>
-                    </ul>
-                    <button class="sortButton">Press To Sort</button>
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Etch A Sketch</h4>
-                    </div>
-                    <div class="canvasWrap etch-a-sketch">
-                        <canvas width="1600" height="1000" id="etch-a-sketch"></canvas>
-                        <div class="buttons">
-                            <button class="shake">Shake!</button>
-                        </div>
-
-                    </div>
-
-                </div>
-                <div class="blogEntry">
-                    <div class="blogEntryHeader">
-                        <h4>Gallery</h4>
-                    </div>
-                    <p>A demo gallery</p>
-                    <div class="buttonControl">
-                        <a href="./main/gallery.html"><button>Enter Gallery</button></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footerSet">
-                <footer>
-
-                </footer>
-            </div>
-        </div>
-        <script src="scripts.js" type="module"></script>
-        <script src="scripts/etch-a-sketch/etch-a-sketch.js" type="module"></script>
+        </main>
+        <footer>
+            <span>GitHub Icon</span>
+            <span>Twitter Icon</span>
+            <span>Bookshlf?</span>
+        </footer>
+    </div>
 </body>
 
 </html>
