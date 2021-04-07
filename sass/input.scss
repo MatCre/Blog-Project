@@ -1,33 +1,116 @@
 $myFont: monospace, sans-serif;
-$primaryColor1: #AF5810;
-$secondaryColor1: #FFDDC0;
+$primaryColor1: #52E9FA;
+$secondaryColor1: #5279FA;
+$alternativeColor1: #52FA9B;
 $myFontSize: 25px;
-$myWidth: 680px;
+$myBasicFont: sans-serif;
+
+@mixin innerGlow($strength) {
+    box-shadow: inset 0 0 $strength $secondaryColor1;
+}
+
+@mixin outerGlow($strength) {
+    box-shadow: 0 0 $strength $secondaryColor1;
+}
+
+
+body {
+    margin: 0;
+    font-family: $myBasicFont;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 .wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
+}
+
+header {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    background-color: $primaryColor1;
+
+    
+    @include innerGlow(10px);
+    
+    .scrolling-text-bar {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        background-color: $secondaryColor1;
+        min-width: 100vw;
+    }
+    
+    h1 {
+        padding: 40px 0 30px 0;
+    }
 }
 
 nav {
     background-color: $secondaryColor1;
     flex: 1;
+    display: flex;
 
     span {
-        border: 2px solid goldenrod;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        padding: 20px;
     }
 }
 
-header {
-    flex: 1;
-}
-
 main {
+
+    @include innerGlow(40px);
+
     background-color: $primaryColor1;
     flex: 1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0 0 0;
+
+    .container {
+        display: flex;
+        flex: 1;
+        padding: 20px 40px 20px 40px;
+    }
+
+    .post-form {
+        flex: 1;
+    }
+
+    .posts {
+        flex: 2;
+        padding: 40px 0 20px 0;
+        align-content: space-between;
+    }
+
+    .post {
+        padding: 20px;
+        background-color: rgba(0,0,0,0.4);
+        border-radius: 40px;
+
+        @include outerGlow(20px);
+    }
 }
 
 footer {
     flex: 1;
+    display: flex;
+    justify-content: space-around;
+    background-color: $alternativeColor1;
+
+    span {
+        margin: 20px 0 20px 0;
+    }
 }
