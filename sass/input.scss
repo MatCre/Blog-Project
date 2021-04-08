@@ -25,26 +25,22 @@ body {
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     width: 100%;
 }
 
 header {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+    grid-column: 1 / -1;
     background-color: $primaryColor1;
-
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
     
     @include innerGlow(10px);
     
     .scrolling-text-bar {
-        flex: 1;
-        display: flex;
-        justify-content: center;
+        
         background-color: $secondaryColor1;
         min-width: 100vw;
     }
@@ -55,14 +51,12 @@ header {
 }
 
 nav {
+    grid-column: 1 / -1;
     background-color: $secondaryColor1;
-    flex: 1;
-    display: flex;
+    
 
     span {
-        flex: 1;
-        display: flex;
-        justify-content: center;
+        
         margin: 10px;
         padding: 20px;
     }
@@ -70,29 +64,27 @@ nav {
 
 main {
 
+    grid-column: 2;
+
     @include innerGlow(40px);
 
     background-color: $primaryColor1;
     flex: 1;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
     padding: 20px 0 0 0;
 
     .container {
-        display: flex;
-        flex: 1;
+        
         padding: 20px 40px 20px 40px;
     }
 
     .post-form {
-        flex: 1;
+        
     }
 
     .posts {
-        flex: 2;
+    
         padding: 40px 0 20px 0;
-        align-content: space-between;
     }
 
     .post {
@@ -105,9 +97,7 @@ main {
 }
 
 footer {
-    flex: 1;
-    display: flex;
-    justify-content: space-around;
+    grid-column: 1 / -1;
     background-color: $alternativeColor1;
 
     span {

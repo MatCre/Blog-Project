@@ -10,24 +10,20 @@ body {
 }
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
   width: 100%;
 }
 
 header {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
+  grid-column: 1/-1;
   background-color: #52E9FA;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
   box-shadow: inset 0 0 10px #5279FA;
 }
 header .scrolling-text-bar {
-  flex: 1;
-  display: flex;
-  justify-content: center;
   background-color: #5279FA;
   min-width: 100vw;
 }
@@ -36,39 +32,27 @@ header h1 {
 }
 
 nav {
+  grid-column: 1/-1;
   background-color: #5279FA;
-  flex: 1;
-  display: flex;
 }
 nav span {
-  flex: 1;
-  display: flex;
-  justify-content: center;
   margin: 10px;
   padding: 20px;
 }
 
 main {
+  grid-column: 2;
   box-shadow: inset 0 0 40px #5279FA;
   background-color: #52E9FA;
   flex: 1;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
   padding: 20px 0 0 0;
 }
 main .container {
-  display: flex;
-  flex: 1;
   padding: 20px 40px 20px 40px;
 }
-main .post-form {
-  flex: 1;
-}
 main .posts {
-  flex: 2;
   padding: 40px 0 20px 0;
-  align-content: space-between;
 }
 main .post {
   padding: 20px;
@@ -78,9 +62,7 @@ main .post {
 }
 
 footer {
-  flex: 1;
-  display: flex;
-  justify-content: space-around;
+  grid-column: 1/-1;
   background-color: #52FA9B;
 }
 footer span {
