@@ -11,24 +11,23 @@
 <body>
     <div class="wrapper">
         <header>
-            <div class="scrolling-text-bar">
-                <p>Some Scrolling Text</p>
-                <!--TODO: Scrolling text across bar like osrs-->
-            </div>
+            <!--Project Idea: Scrolling text across bar like osrs-->
             <h1 class="headerName">Mathew's Brilliant Log Of Generality</h1>
         </header>
         <nav>
-            <span><strong>Websites</strong></span>
-            <span><strong>Code Examples</strong></span>
-            <span><strong>Archive</strong></span>
+            <span><strong>🚧Websites🚧</strong></span>
+            <span><strong>🚧Code Examples🚧</strong></span>
+            <span><strong>🚧Archive🚧</strong></span>
         </nav>
         <main>
             <div class="container">
                 <div class="post-form">
                     <!--TODO Create Javascript to save posts to local storage and populate posts-->
                     <form>
-                        <input type="text">
-                        <button>Post</button>
+                        <input class="blog_input_title" type="text" placeholder="Title">
+                        <textarea class="blog_text_area" name="blogTxt" id="blogTxt" cols="40" rows="8"></textarea>
+
+                        <button type="submit" class="submit-post">Post</button>
                     </form>
                 </div>
                 <div class="posts">
@@ -41,9 +40,10 @@
             </div>
         </main>
         <footer>
-            <span>GitHub Icon</span>
-            <span>Twitter Icon</span>
-            <span>Bookshlf?</span>
+            <span><a href="https://github.com/MatCre"><img src="GitHub-Mark\PNG\GitHub-Mark-Light-64px.png"
+                        alt="GitHub-Mark"></a></span>
+            <span>🐦</span>
+            <span>📚</span>
         </footer>
     </div>
 </body>

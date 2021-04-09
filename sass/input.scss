@@ -1,22 +1,23 @@
 $myFont: monospace, sans-serif;
 $primaryColor1: #52E9FA;
-$secondaryColor1: #5279FA;
+$secondaryColor1: #5279FA80;
 $alternativeColor1: #52FA9B;
 $myFontSize: 25px;
 $myBasicFont: sans-serif;
 
-@mixin innerGlow($strength) {
-    box-shadow: inset 0 0 $strength $secondaryColor1;
+@mixin innerGlow($strength, $color) {
+    box-shadow: inset 0 0 $strength $color;
 }
 
-@mixin outerGlow($strength) {
-    box-shadow: 0 0 $strength $secondaryColor1;
+@mixin outerGlow($strength, $color) {
+    box-shadow: 0 0 $strength $color;
 }
 
 
 body {
     margin: 0;
     font-family: $myBasicFont;
+    background: linear-gradient(90deg, white, $primaryColor1, white);
 }
 *,
 *:before,
@@ -32,73 +33,113 @@ body {
 
 header {
     grid-column: 1 / -1;
-    background-color: $primaryColor1;
     display: grid;
     grid-template-columns: 1fr;
-    justify-content: center;
+    justify-items: center;
     
-    @include innerGlow(10px);
     
-    .scrolling-text-bar {
-        
-        background-color: $secondaryColor1;
-        min-width: 100vw;
-    }
     
     h1 {
         padding: 40px 0 30px 0;
+        font-size: 60px;
+        font-weight: 500;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
     }
 }
 
 nav {
     grid-column: 1 / -1;
     background-color: $secondaryColor1;
-    
+    padding: 10px;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: space-around; 
+    border-top: 2px solid black;
 
     span {
-        
+        font-size: 2rem;
         margin: 10px;
         padding: 20px;
     }
 }
 
+main::before {
+    background-color: goldenrod;
+}
+
 main {
 
     grid-column: 2;
-
-    @include innerGlow(40px);
-
-    background-color: $primaryColor1;
-    flex: 1;
     min-height: 100vh;
     padding: 20px 0 0 0;
 
     .container {
-        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 20px 40px 20px 40px;
     }
 
     .post-form {
+        grid-template-columns: 1fr 200px;
+        width: 30vw;
+        display: grid;
+        grid-template-columns: 1fr ;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         
     }
 
-    .posts {
+    .blog_input_title {
+        border: none;
+        margin: 20px;
+        height: 2rem;
+    }
+
+    .blog_text_area {
+       resize: none;
+       border: none;
+       width: 500px;
+       height: 100px;
+       min-height: 100px;
+    }
+
+    .submit-post {
+        margin: 20px;
+        
+    }
     
+}
+
+    .posts {
         padding: 40px 0 20px 0;
     }
 
     .post {
+        color:black;
+        font-weight: 600;
         padding: 20px;
-        background-color: rgba(0,0,0,0.4);
-        border-radius: 40px;
+        background-color: $secondaryColor1;
+        border-radius: 20px;
+        box-shadow: 2px 5px rgba(0,0,0,0.4);
 
-        @include outerGlow(20px);
+        @include outerGlow(20px, $secondaryColor1);
     }
-}
+
 
 footer {
     grid-column: 1 / -1;
-    background-color: $alternativeColor1;
+    height: 10vh;
+    display: grid;
+    justify-items: center;
+    grid-auto-flow: c;
+
 
     span {
         margin: 20px 0 20px 0;
