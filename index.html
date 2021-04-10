@@ -10,41 +10,43 @@
 
 <body>
     <div class="wrapper">
+        <!-- Header -->
         <header>
             <!--Project Idea: Scrolling text across bar like osrs-->
             <h1 class="headerName">Mathew's Brilliant Log Of Generality</h1>
         </header>
+        <!-- Nav -->
         <nav>
             <span><strong>🚧Websites🚧</strong></span>
             <span><strong>🚧Code Examples🚧</strong></span>
             <span><strong>🚧Archive🚧</strong></span>
         </nav>
+        <!-- Main -->
         <main>
             <div class="container">
-                <div class="post-form">
-                    <!--TODO Create Javascript to save posts to local storage and populate posts-->
-                    <form>
+                <div class="post-form-container">
+                    <!-- Form -->
+                    <form class="post-form">
                         <input class="blog_input_title" type="text" placeholder="Title">
-                        <textarea class="blog_text_area" name="blogTxt" id="blogTxt" cols="40" rows="8"></textarea>
+                        <textarea class="blog_text_area" name="blogTxt" id="blogTxt" cols="40" rows="8"
+                            placeholder="this is some text"></textarea>
 
                         <button type="submit" class="submit-post">Post</button>
                     </form>
                 </div>
+                <!-- Posts -->
                 <div class="posts">
-                    <div class="post">
-                        <!--TODO Refresh look, look for examples-->
-                        <h3>Refreshing</h3>
-                        <p>It is refreshing to build this with new skills like flexbox some basics of sass</p>
-                    </div>
                 </div>
             </div>
         </main>
+        <!-- Footer -->
         <footer>
-            <span><a href="https://github.com/MatCre"><img src="GitHub-Mark\PNG\GitHub-Mark-Light-64px.png"
+            <span><a href="https://github.com/MatCre"><img src="./images/GitHub-Mark-Light-64px.png"
                         alt="GitHub-Mark"></a></span>
             <span>🐦</span>
             <span>📚</span>
         </footer>
+        <script src="init.js"></script>
     </div>
 </body>
 

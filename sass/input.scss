@@ -81,13 +81,6 @@ main {
         padding: 20px 40px 20px 40px;
     }
 
-    .post-form {
-        grid-template-columns: 1fr 200px;
-        width: 30vw;
-        display: grid;
-        grid-template-columns: 1fr ;
-    }
-
     form {
         display: flex;
         flex-direction: column;
@@ -115,12 +108,10 @@ main {
         
     }
     
-}
-
     .posts {
         padding: 40px 0 20px 0;
     }
-
+    
     .post {
         color:black;
         font-weight: 600;
@@ -128,9 +119,11 @@ main {
         background-color: $secondaryColor1;
         border-radius: 20px;
         box-shadow: 2px 5px rgba(0,0,0,0.4);
-
+    
         @include outerGlow(20px, $secondaryColor1);
     }
+}
+
 
 
 footer {

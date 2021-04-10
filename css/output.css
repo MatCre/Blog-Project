@@ -60,12 +60,6 @@ main .container {
   align-items: center;
   padding: 20px 40px 20px 40px;
 }
-main .post-form {
-  grid-template-columns: 1fr 200px;
-  width: 30vw;
-  display: grid;
-  grid-template-columns: 1fr;
-}
 main form {
   display: flex;
   flex-direction: column;
@@ -87,12 +81,10 @@ main .blog_text_area {
 main .submit-post {
   margin: 20px;
 }
-
-.posts {
+main .posts {
   padding: 40px 0 20px 0;
 }
-
-.post {
+main .post {
   color: black;
   font-weight: 600;
   padding: 20px;
