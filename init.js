@@ -36,7 +36,7 @@ function createPostObj(title, content) {
     const post = {
         title,
         content,
-        id: Date.now()
+        id: Date.now(),
     }
     return post;
     
@@ -50,16 +50,24 @@ function displayPosts() {
     <button value ="${post.id}" class="delete-post">X</button>
     </div>`).join('');
     postsDiv.innerHTML = html;
-    
-    
+    //any displayed posts now need a delete button 
+    addDeleteButtons();
 }
-//function to hook up delete fucntion to dynamically created button
-function addListenerToDeleteButtons() {
-    const buttons = document.querySelectorAll('button')
-    buttons.forEach(btn => {
-        btn.addEventListener('click', deletePost);
-    })
+//Handle the press of a delete button 
+function handleDeleteButtonPress(e) {
+  console.log(e);
+  const id = parseInt(e.target.value);
+  console.log(id);
+  deletePost(id);
 }
+
+function deletePost(id) {
+  console.log('DELETING ITEM ', id);
+  // updates our items array without this one
+  posts = posts.filter((post) => post.id !== id);
+  postsDiv.dispatchEvent(new CustomEvent('postUpdated'));
+}
+
 //save the posts to local storage
 function mirrorToLocalStorage() {
     // console.info('Saving posts to localstorage')
@@ -70,33 +78,28 @@ function restoreFromLocalStorage() {
     // console.info('Restoring from LS');
     const IsPosts = JSON.parse(localStorage.getItem('posts'));
     if (IsPosts.length) {
-      posts.push(...IsPosts);
+      posts.push(...IsPosts)
+    } else {
+        console.error('no posts');
+      }
+      postsDiv.dispatchEvent(new CustomEvent('postUpdated'));
     }
-    postsDiv.dispatchEvent(new CustomEvent('postUpdated'));
-    addListenerToDeleteButtons();
-  }
-
-//   ! STUCK HERE, THE POSTS ARRAY IS NOT UPDATING WITH THE FILTER BUT IM SURE THE FILTER IS CORRECT, MAY BE ANOTHER EVENT ISSUE
-  //delete post
-  function deletePost(e) {
-      const id = e.currentTarget.value;
-    console.log(posts)
-    posts = posts.filter((post) => post.id !== id);
-    console.log(posts)
-  }
+//this needs to be a function so i can call it when a new post is added
+/*! this is not efficient i dont think because everytime that displayPosts is ran a new event listener
+again and if this were on a larger scale which it might become this will need to be changed
+*/
+function addDeleteButtons() {
+      const deleteBtn = document.querySelectorAll('.delete-post');
+      deleteBtn.forEach(btn => btn.addEventListener('click', handleDeleteButtonPress));
+    }
 
 //Event Listeneres 
 
 postForm.addEventListener('submit', handleSubmit);
-postsDiv.addEventListener('postUpdated', displayPosts);
 postsDiv.addEventListener('postUpdated', mirrorToLocalStorage);
+postsDiv.addEventListener('postUpdated', displayPosts);
 
-addListenerToDeleteButtons();
+//get the posts saved in local storage 
 restoreFromLocalStorage();
-
-
-let array = [{id: 15},{id: 19}];
-
-array = array.filter(i => i.id !== 15);
-
-console.log(array);
+//this needs to run on page load to add listeneres to any buttons on posts retrived from local storage
+addDeleteButtons();
