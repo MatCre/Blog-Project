@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:sass": "sass --watch ./sass/input.scss ./css/output.css"
+    "watch:sass": "sass --watch src/sass/:src/css/stylesheets",
+    "build:sass": "sass src/sass:src/css/stylesheets"
   },
   "repository": {
     "type": "git",
