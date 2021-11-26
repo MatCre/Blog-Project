@@ -1,22 +1,11 @@
-// What I need to get from the page
-
-//The Form 
-// Post Title
-// Post Content 
-// Post Button
-
 // The Posts Div
 
 const postForm = document.querySelector('.post-form');
 const postsDiv = document.querySelector('.posts');
-//What function do I need
-
-
-//I need to create a state of the posts.
 
 let posts = [];
 
-function handleSubmit(e) {
+function handlePostSubmit(e) {
     //get the values of the title and the content 
     const postTitle = e.target.querySelector('.blog_input_title').value;
     const postContent = e.target.querySelector('.blog_text_area').value;
@@ -95,11 +84,14 @@ function addDeleteButtons() {
 
 //Event Listeneres 
 
-postForm.addEventListener('submit', handleSubmit);
+postForm.addEventListener('submit', handlePostSubmit);
 postsDiv.addEventListener('postUpdated', mirrorToLocalStorage);
 postsDiv.addEventListener('postUpdated', displayPosts);
 
 //get the posts saved in local storage 
-restoreFromLocalStorage();
 //this needs to run on page load to add listeneres to any buttons on posts retrived from local storage
-addDeleteButtons();
+
+export {
+  restoreFromLocalStorage,
+  addDeleteButtons,
+}
